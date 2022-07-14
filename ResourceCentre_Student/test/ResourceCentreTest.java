@@ -106,7 +106,7 @@ public class ResourceCentreTest {
 		//fail("Not yet implemented");
 		// write your code here
 		//test
-		// Test if Item list is not null
+		// Test if Item list is not null (Dzaki)
 		assertNotNull("Test if there is valid Chromebook arraylist to add to", chromebookList);
 		//test if item list contains items to display
 		String allChromebook = ResourceCentre.retrieveAllChromebook(chromebookList);
@@ -157,7 +157,7 @@ public class ResourceCentreTest {
 	public void testDoLoanChromebook() {
 		//fail("Not yet implemented");
 		// write your code here
-		//error condition
+		//error condition (Dzaki)
 		ResourceCentre.addChromebook(chromebookList, cb2);	
 		cb2.setIsAvailable(false);
 		Boolean ok = ResourceCentre.doLoanChromebook(chromebookList, "CB0012", "8-8-2020" );
@@ -187,7 +187,7 @@ public class ResourceCentreTest {
 	public void testDoReturnChromebook() {
 		//fail("Not yet implemented");
 		// write your code here
-		//normal
+		//normal (Dzaki)
 		ResourceCentre.addChromebook(chromebookList, cb2);
 		cb2.setIsAvailable(false);
 		Boolean isReturned = ResourceCentre.doReturnChromebook(chromebookList, "CB0012");
