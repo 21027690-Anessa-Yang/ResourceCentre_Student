@@ -162,6 +162,10 @@ public class ResourceCentreTest {
 		cb2.setIsAvailable(false);
 		Boolean ok = ResourceCentre.doLoanChromebook(chromebookList, "CB0012", "8-8-2020" );
 		assertFalse("Test that un-available item is NOT ok to loan?", ok);
+		//Syahrul - test whether is unavailable for loan
+		chromebookList.add(cb1);
+		chromebookList.get(0).setIsAvailable(false);
+		assertFalse("Test that when item is loaned, status is changed to false", chromebookList.get(0).getIsAvailable() == true);
 		
 	}
 	
@@ -205,14 +209,6 @@ public class ResourceCentreTest {
 		}
 	}
 	
-	@Test
-	public void testUnavail() {
-		chromebookList.add(cb1);
-		chromebookList.get(0).setIsAvailable(false);
-		assertFalse("Test that when item is loaned, status is changed to false", chromebookList.get(0).getIsAvailable() == true);
-	}
-	
-//	testestest
 	@After
 	public void tearDown() throws Exception {
 		cc1 = null;
