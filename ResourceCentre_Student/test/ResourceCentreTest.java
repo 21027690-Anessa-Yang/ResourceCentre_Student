@@ -194,6 +194,25 @@ public class ResourceCentreTest {
 				assertTrue("Test if loaned out chromebook CC0012 is returned- true", isReturned);
 	}
 	
+	@Test
+	public void testOutsideList() {
+		chromebookList.add(cb1);
+		chromebookList.add(cb2);
+		chromebookList.add(cb3);
+		
+		for (int i = 0; i <chromebookList.size(); i++) {
+			assertFalse("Test that an item that does not exist in the item list.", chromebookList.get(i).getDescription() == "Macbook");
+		}
+	}
+	
+	@Test
+	public void testUnavail() {
+		chromebookList.add(cb1);
+		chromebookList.get(0).setIsAvailable(false);
+		assertFalse("Test that when item is loaned, status is changed to false", chromebookList.get(0).getIsAvailable() == true);
+	}
+	
+//	testestest
 	@After
 	public void tearDown() throws Exception {
 		cc1 = null;
