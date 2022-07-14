@@ -201,6 +201,10 @@ public class ResourceCentreTest {
 		chromebookList.add(cb1);
 		chromebookList.get(0).setIsAvailable(true);
 		assertTrue("Test that when item is loaned, status is changed to false", chromebookList.get(0).getIsAvailable() == true);
+		
+		//error Syahrul
+		chromebookList.get(0).setIsAvailable(false);
+		assertFalse("Test if item is returned - false", chromebookList.get(0).getIsAvailable() == true);
 	}
 	
 	@Test
