@@ -169,6 +169,17 @@ public class ResourceCentreTest {
 		// write your code here
 	}
 	
+	@Test
+	public void testOutsideList() {
+		chromebookList.add(cb1);
+		chromebookList.add(cb2);
+		chromebookList.add(cb3);
+		
+		for (int i = 0; i <chromebookList.size(); i++) {
+			assertFalse("Test that an item that does not exist in the item list.", chromebookList.get(i).getDescription() == "Macbook");
+		}
+	}
+	
 	@After
 	public void tearDown() throws Exception {
 		cc1 = null;
