@@ -105,6 +105,20 @@ public class ResourceCentreTest {
 	public void testRetrieveAllChromebook() {
 		//fail("Not yet implemented");
 		// write your code here
+		
+		// Test if Item list is not null
+		assertNotNull("Test if there is valid Chromebook arraylist to add to", chromebookList);
+		//test if item list contains items to display
+		String allChromebook = ResourceCentre.retrieveAllChromebook(chromebookList);
+		String testOutput = "";
+		for (int i = 0; i < chromebookList.size(); i++) {
+
+			testOutput += String.format("%-10s %-30s %-10s %-10s %-20s\n", chromebookList.get(i).getAssetTag(),
+					chromebookList.get(i).getDescription(), 
+					ResourceCentre.showAvailability(chromebookList.get(i).getIsAvailable()),
+					chromebookList.get(i).getDueDate(),chromebookList.get(i).getOs());
+		}
+		assertEquals("Check that ViewAllChromebooklist", testOutput, allChromebook);
 	}
 
 	@Test
@@ -143,6 +157,12 @@ public class ResourceCentreTest {
 	public void testDoLoanChromebook() {
 		//fail("Not yet implemented");
 		// write your code here
+		//error condition
+				ResourceCentre.addChromebook(chromebookList, cb2);	
+				cb2.setIsAvailable(false);
+				Boolean ok = ResourceCentre.doLoanChromebook(chromebookList, "CC0012", "8-8-2020" );
+				assertFalse("Test that un-available item is NOT ok to loan?", ok);
+		
 	}
 	
 	@Test
