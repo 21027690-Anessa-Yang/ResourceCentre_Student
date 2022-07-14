@@ -91,7 +91,30 @@ public class ResourceCentreTest {
 		ResourceCentre.addChromebook(chromebookList, cb3);
 		chromebookList.remove(2);
 		assertSame("Test that Chromebook is added same as 1st item of the list?", cb1, chromebookList.get(0));
-		assertSame("Test that Chromebook is added same as 1st item of the list?", cb2, chromebookList.get(1));
+		assertSame("Test that Chromebook is added same as 2nd item of the list?", cb2, chromebookList.get(1));
+				    
+		
+		//Add another item. test The size of the list is 3?
+		ResourceCentre.addChromebook(chromebookList, cb3);
+		assertEquals("Test that Chromebook arraylist size is 3?", 3, chromebookList.size());
+
+		  }
+	public void testAddChromebookError() {
+		//fail("Not yet implemented");
+		// write your code here 
+		//
+		assertNotNull("Test if there is valid Chromebook arraylist to add to", chromebookList);
+				    
+		//Given an empty list, after adding 1 item, the size of the list is 1 //test
+		ResourceCentre.addChromebook(chromebookList, cb1);    
+		assertEquals("Test if that Chromebook arraylist size is 1?", 1, chromebookList.size());
+		
+		//Test if item added is same as first (Shi Jie)
+		ResourceCentre.addChromebook(chromebookList, cb2);
+		ResourceCentre.addChromebook(chromebookList, cb3);
+		chromebookList.remove(2);
+		assertSame("Test that Chromebook is added same as 1st item of the list?", cb1, chromebookList.get(0));
+		assertNotEquals("Test that that it cb2 and cb1 are not same", cb2, chromebookList.get(0));
 				    
 		//Add another item. test The size of the list is 2?
 		
