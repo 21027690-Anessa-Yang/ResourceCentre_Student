@@ -158,10 +158,10 @@ public class ResourceCentreTest {
 		//fail("Not yet implemented");
 		// write your code here
 		//error condition
-				ResourceCentre.addChromebook(chromebookList, cb2);	
-				cb2.setIsAvailable(false);
-				Boolean ok = ResourceCentre.doLoanChromebook(chromebookList, "CB0012", "8-8-2020" );
-				assertFalse("Test that un-available item is NOT ok to loan?", ok);
+		ResourceCentre.addChromebook(chromebookList, cb2);	
+		cb2.setIsAvailable(false);
+		Boolean ok = ResourceCentre.doLoanChromebook(chromebookList, "CB0012", "8-8-2020" );
+		assertFalse("Test that un-available item is NOT ok to loan?", ok);
 		
 	}
 	
