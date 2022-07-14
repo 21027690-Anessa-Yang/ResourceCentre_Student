@@ -180,6 +180,14 @@ public class ResourceCentreTest {
 		}
 	}
 	
+	@Test
+	public void testUnavail() {
+		chromebookList.add(cb1);
+		chromebookList.get(0).setIsAvailable(false);
+		assertFalse("Test that when item is loaned, status is changed to false", chromebookList.get(0).getIsAvailable() == true);
+	}
+	
+//	testestest
 	@After
 	public void tearDown() throws Exception {
 		cc1 = null;
