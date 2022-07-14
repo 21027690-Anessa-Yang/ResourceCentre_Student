@@ -105,7 +105,7 @@ public class ResourceCentreTest {
 	public void testRetrieveAllChromebook() {
 		//fail("Not yet implemented");
 		// write your code here
-		
+		//test
 		// Test if Item list is not null
 		assertNotNull("Test if there is valid Chromebook arraylist to add to", chromebookList);
 		//test if item list contains items to display
@@ -187,6 +187,11 @@ public class ResourceCentreTest {
 	public void testDoReturnChromebook() {
 		//fail("Not yet implemented");
 		// write your code here
+		//normal
+				ResourceCentre.addChromebook(chromebookList, cb2);
+				cb2.setIsAvailable(false);
+				Boolean isReturned = ResourceCentre.doReturnChromebook(chromebookList, "CC0012");
+				assertTrue("Test if loaned out chromebook CC0012 is returned- true", isReturned);
 	}
 	
 	@After
