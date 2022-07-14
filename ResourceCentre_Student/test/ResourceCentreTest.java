@@ -40,7 +40,7 @@ public class ResourceCentreTest {
 	
 	@Test
 	public void testAddCamcorder() {
-		// Item list is not null, so that can add a new item
+		// Item list is not null, so that can add a new item testing
 		assertNotNull("Test if there is valid Camcorder arraylist to add to", camcorderList);
 		
 		//Given an empty list, after adding 1 item, the size of the list is 1
@@ -63,7 +63,7 @@ public class ResourceCentreTest {
 		//
 		assertNotNull("Test if there is valid Chromebook arraylist to add to", chromebookList);
 				    
-		//Given an empty list, after adding 1 item, the size of the list is 1
+		//Given an empty list, after adding 1 item, the size of the list is 1 //test
 		ResourceCentre.addChromebook(chromebookList, cb1);    
 		assertEquals("Test if that Chromebook arraylist size is 1?", 1, chromebookList.size());
 		
