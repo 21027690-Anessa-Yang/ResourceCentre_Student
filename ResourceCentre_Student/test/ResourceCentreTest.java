@@ -160,7 +160,7 @@ public class ResourceCentreTest {
 		//error condition
 				ResourceCentre.addChromebook(chromebookList, cb2);	
 				cb2.setIsAvailable(false);
-				Boolean ok = ResourceCentre.doLoanChromebook(chromebookList, "CC0012", "8-8-2020" );
+				Boolean ok = ResourceCentre.doLoanChromebook(chromebookList, "CB0012", "8-8-2020" );
 				assertFalse("Test that un-available item is NOT ok to loan?", ok);
 		
 	}
@@ -188,10 +188,10 @@ public class ResourceCentreTest {
 		//fail("Not yet implemented");
 		// write your code here
 		//normal
-				ResourceCentre.addChromebook(chromebookList, cb2);
-				cb2.setIsAvailable(false);
-				Boolean isReturned = ResourceCentre.doReturnChromebook(chromebookList, "CC0012");
-				assertTrue("Test if loaned out chromebook CC0012 is returned- true", isReturned);
+		ResourceCentre.addChromebook(chromebookList, cb2);
+		cb2.setIsAvailable(false);
+		Boolean isReturned = ResourceCentre.doReturnChromebook(chromebookList, "CB0012");
+		assertTrue("Test if loaned out chromebook CC0012 is returned- true", isReturned);
 	}
 	
 	@Test
